@@ -28,7 +28,7 @@ app.set('views',viewPaths)
 hbs.registerPartials(partialPath)
 
 
-const port=3000||process.env.PORT 
+const port=process.env.PORT || 3000 
 app.use(express.json())
 app.use(userrouter)
 app.use(uploadrouter)
@@ -48,5 +48,5 @@ app.get('/home',(req,res)=>{
 
 
 server.listen(port,()=>{
-    console.log(`server is up on ${port}`)
+    console.log('server is up on port '+port)
 })
