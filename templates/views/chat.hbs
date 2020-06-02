@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>chat</title>
+    </head>
+    <body>
+        Chat Station
+        <div id="messages"></div>
+        <h1> welcome {{user}}</h1>
+        <form id="message-form">
+            <input name="message" placeholder="Message">
+            <button>send</button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/chat.js"></script>
+        <script>
+            username=`{{user}}`
+            room='pranayroom'
+            socket.emit('users',{username,room})
+            socket.emit('join',{username,room},(error)=>{
+                alert(error)
+            })
+        </script>
+    </body>
+</html>
