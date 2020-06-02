@@ -37,8 +37,8 @@ app.use(uploadrouter)
 require('./routers/eventDashboard')(app,io)
 require('./routers/chat')(app,io)
 
-app.get('/',(req,res)=>{
-    res.send("hello")
+app.get('',(req,res)=>{
+    res.render('home')
 })
 
 
